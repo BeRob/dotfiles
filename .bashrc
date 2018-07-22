@@ -1,9 +1,10 @@
-######################
-#                    #
-# ~/dotfiles/.bashrc #
-# Dotfiles by Cawa   #
-#                    #
-######################
+############################
+#                          #
+# DOTFILES                 #
+# /etc/.bashrc             #
+#        by Cawa           #
+#                          #
+############################
 
 # If not running interactively, don't do anything
 
