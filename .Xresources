@@ -1,39 +1,39 @@
 
-!! 	.Xresources						            !!
-!! 	/home/cawa/dotfiles/.Xresources	  !!
-!!			by Cawa					              !!
+!! 	.Xresources				 !!
+!! 	/home/cawa/dotfiles/.Xresources	 	 !!
+!!			by Cawa			 !!
 
 
 !! FONT SETTINGS ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++			
 
 !! Xft ----------------------------------------------------------------------------
-Xft.autohint:							              0
-Xft.dpi:        						            96
-Xft.antialias:  						            true
-Xft.rgba:       						            rgb
-Xft.hinting:    						            true
-Xft.hintstyle:  						            hintslight
-Xft.lcdfilter: 							            lcddefault
+Xft.autohint:							0
+Xft.dpi:        						96
+Xft.antialias:  						true
+Xft.rgba:       						rgb
+Xft.hinting:    						true
+Xft.hintstyle:  						hintslight
+Xft.lcdfilter: 							lcddefault
 
 !! Fonts and Fontsize -------------------------------------------------------------
 
-URxvt*imLocale:                       	de_DE.UTF-8
-! URxvt*imFont:                         fontname
-! #define FONTSIZE 						          12
-! URxvt*faceSize:						            10
-! URxvt*renderFont:		      			      true
+URxvt*imLocale:                       				de_DE.UTF-8
+! URxvt*imFont:                         			fontname
+! #define FONTSIZE 						12
+! URxvt*faceSize:						10
+! URxvt*renderFont:		      			      	true
 
-URxvt*faceName:			      			        xft:Iosevka Sans Mono:style=regular:size=10
-URxvt*font:            	              	xft:Iosevka Sans Mono:style=regular:size=10
-URxvt*boldFont:                      	  xft:Iosevka Sans Mono:style=bold:size=10
+URxvt*faceName:			      			        xft:Iosevka:style=regular:size=10
+URxvt*font:            	              				xft:Iosevka:style=regular:size=10
+URxvt*boldFont:                      	  			xft:Iosevka:style=bold:size=10
 
 ! URxvt*faceName:			      		        xft:Iosevka Sans Mono:style=regular
-! URxvt*font:            	        	    xft:Terminus:size=FONTSIZE
-! URxvt*boldFont:                       xft:Terminus:bold:size=FONTSIZE
+! URxvt*font:            	        	    		xft:Terminus:size=FONTSIZE
+! URxvt*boldFont:                       			xft:Terminus:bold:size=FONTSIZE
 
 ! URxvt*faceName:			      		        Terminus-12
-! URxvt*font:            	        	    Terminus-12
-! URxvt*boldFont:                       Terminus-12
+! URxvt*font:            	        	    		Terminus-12
+! URxvt*boldFont:                       			Terminus-12
 
 
 !! TERMINAL VISUAL SETTINGS ++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -85,7 +85,7 @@ URxvt*shading:                        	15
 ! URxvt*fadeColor:                      color
 
 !! Scrolling Settings --------------------------------------------------------------
-URxvt*scrollstyle:                    	plain
+URxvt*scrollstyle:                    	rxvt
 URxvt*scrollBar:                      	false
 URxvt*scrollBar_right:                	false
 URxvt*scrollBar_floating:             	false
@@ -102,7 +102,7 @@ URxvt*scrollBar_floating:             	false
 ! URxvt*background.border:              boolean
 ! URxvt*externalBorder:                 1
 ! URxvt*internalBorder:                 1
-! URxvt*borderLess:                     true
+URxvt*borderLess:                     false
 ! URxvt*lineSpace:                      number
 ! URxvt*letterSpace:                    -2
 
@@ -116,7 +116,7 @@ URxvt*perl-ext-common:                	default,url-select,matcher
 URxvt*url-launcher:                   	/bin/firefox
 
 URxvt*loginShell:                     	true
-URxvt*termName:                       	rxvt-unicode
+URxvt*termName:                       	rxvt-256color
 URxvt*saveLines:                      	8000
 URxvt*iso14755:                       	false
 URxvt*iso14755_52:                    	false
