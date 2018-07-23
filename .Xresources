@@ -1,38 +1,38 @@
 
-!! 	.Xresources						 !!
-!! 	/home/cawa/dotfiles/.Xresources	 !!
-!!			by Cawa					 !!
+!! 	.Xresources						            !!
+!! 	/home/cawa/dotfiles/.Xresources	  !!
+!!			by Cawa					              !!
 
 
 !! FONT SETTINGS ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++			
 
 !! Xft ----------------------------------------------------------------------------
-Xft.autohint:							0
-Xft.dpi:        						96
-Xft.antialias:  						true
-Xft.rgba:       						rgb
-Xft.hinting:    						true
-Xft.hintstyle:  						hintslight
-Xft.lcdfilter: 							lcddefault
+Xft.autohint:							              0
+Xft.dpi:        						            96
+Xft.antialias:  						            true
+Xft.rgba:       						            rgb
+Xft.hinting:    						            true
+Xft.hintstyle:  						            hintslight
+Xft.lcdfilter: 							            lcddefault
 
 !! Fonts and Fontsize -------------------------------------------------------------
 
 URxvt*imLocale:                       	de_DE.UTF-8
 ! URxvt*imFont:                         fontname
-! #define FONTSIZE 						12
-! URxvt*faceSize:						10
-! URxvt*renderFont:		      			true
+! #define FONTSIZE 						          12
+! URxvt*faceSize:						            10
+! URxvt*renderFont:		      			      true
 
-URxvt*faceName:			      			xft:Iosevka Sans Mono:style=regular:size=10
+URxvt*faceName:			      			        xft:Iosevka Sans Mono:style=regular:size=10
 URxvt*font:            	              	xft:Iosevka Sans Mono:style=regular:size=10
-URxvt*boldFont:                      	xft:Iosevka Sans Mono:style=bold:size=10
+URxvt*boldFont:                      	  xft:Iosevka Sans Mono:style=bold:size=10
 
-! URxvt*faceName:			      		xft:Iosevka Sans Mono:style=regular
-! URxvt*font:            	        	xft:Terminus:size=FONTSIZE
+! URxvt*faceName:			      		        xft:Iosevka Sans Mono:style=regular
+! URxvt*font:            	        	    xft:Terminus:size=FONTSIZE
 ! URxvt*boldFont:                       xft:Terminus:bold:size=FONTSIZE
 
-! URxvt*faceName:			      		Terminus-12
-! URxvt*font:            	        	Terminus-12
+! URxvt*faceName:			      		        Terminus-12
+! URxvt*font:            	        	    Terminus-12
 ! URxvt*boldFont:                       Terminus-12
 
 
