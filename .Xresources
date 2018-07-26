@@ -23,9 +23,10 @@ URxvt*imLocale:                       				de_DE.UTF-8
 ! URxvt*faceSize:						10
 ! URxvt*renderFont:		      			      	true
 
-URxvt*faceName:			      			        xft:Iosevka:style=regular:size=10,xft:FontAwesome for Powerline
-URxvt*font:            	              				xft:Iosevka:style=regular:size=10,xft:Inconsolata\ for\ Powerline:pixelsize=10
-URxvt*boldFont:                      	  			xft:Iosevka:style=bold:size=10
+URxvt*faceName:			      	        xft:Iosevka:style=regular:size=10, -xos4-terminesspowerline-medium-r-normal--12-120-72-72-c-60-iso10646-1
+URxvt.font:            	              		xft:Iosevka:style=regular:size=10, -xos4-terminesspowerline-medium-r-normal--12-120-72-72-c-60-iso10646-1
+*font:						-xos4-terminesspowerline-medium-r-normal--12-120-72-72-c-60-iso10646-1
+URxvt*boldFont:                      	  	xft:Iosevka:style=bold:size=10, -xos4-terminesspowerline-medium-r-normal--12-120-72-72-c-60-iso10646-1
 
 ! URxvt*faceName:			      		        xft:Iosevka Sans Mono:style=regular
 ! URxvt*font:            	        	    		xft:Terminus:size=FONTSIZE
@@ -39,7 +40,7 @@ URxvt*boldFont:                      	  			xft:Iosevka:style=bold:size=10
 !! TERMINAL VISUAL SETTINGS ++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 !! Cursor and Pointer --------------------------------------------------------------
-! URxvt*cursorColor:                    	blue
+! URxvt*cursorColor:                    blue
 ! URxvt*cursorColor2:                   color
 ! URxvt*pointerColor:                   color
 ! URxvt*pointerColor2:                  color
@@ -116,7 +117,7 @@ URxvt*perl-ext-common:
 URxvt*url-launcher:                   	/bin/firefox
 
 URxvt*loginShell:                     	true
-URxvt*termName:                       	URxvt
+URxvt*termName:                       	rxvt-unicode-256color
 URxvt*saveLines:                      	0
 URxvt*iso14755:                       	false
 URxvt*iso14755_52:                    	false
@@ -181,6 +182,11 @@ URxvt*perl-ext:
 ! URxvt*tab-fg:                         colour
 ! URxvt*tabbar-bg:                      colour
 ! URxvt*tabbar-fg:                      colour
+
+
+!! Color-set from Terminal.sexy
+!! trim-ya-beard
+
 ! special
 *.foreground:   #daba8b
 *.background:   #191716

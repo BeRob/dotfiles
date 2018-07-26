@@ -45,20 +45,20 @@ fi
 PS1="[\[\033[1;31m\]\u\[\033[0m\]@\h] \W \$"
 
 
-#case ${TERM} in
-#  xterm*|rxvt*|Eterm|aterm|kterm|gnome*)
-#    PROMPT_COMMAND=${PROMPT_COMMAND:+$PROMPT_COMMAND; }'printf "\033]0;%s@%s:%s\007" "${USER}" "${HOSTNAME%%.*}" "${PWD/#$HOME/\~}"'
-#
-#    ;;
-#  screen*)
-#   PROMPT_COMMAND=${PROMPT_COMMAND:+$PROMPT_COMMAND; }'printf "\033_%s@%s:%s\033\\" "${USER}" "${HOSTNAME%%.*}" "${PWD/#$HOME/\~}"'
-#    ;;
-#esac
+case ${TERM} in
+  xterm*|rxvt*|Eterm|aterm|kterm|gnome*)
+    PROMPT_COMMAND=${PROMPT_COMMAND:+$PROMPT_COMMAND; }'printf "\033]0;%s@%s:%s\007" "${USER}" "${HOSTNAME%%.*}" "${PWD/#$HOME/\~}"'
+
+    ;;
+  screen*)
+    PROMPT_COMMAND=${PROMPT_COMMAND:+$PROMPT_COMMAND; }'printf "\033_%s@%s:%s\033\\" "${USER}" "${HOSTNAME%%.*}" "${PWD/#$HOME/\~}"'
+    ;;
+esac
 
 
 # Source Tmuxinator Completion
 
-source /etc/bash_sw-tmuxinator
+# source /etc/bash_sw-tmuxinator
 
 # Bash Completion
 
