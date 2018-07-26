@@ -23,8 +23,8 @@ URxvt*imLocale:                       				de_DE.UTF-8
 ! URxvt*faceSize:						10
 ! URxvt*renderFont:		      			      	true
 
-URxvt*faceName:			      			        xft:Iosevka:style=regular:size=10
-URxvt*font:            	              				xft:Iosevka:style=regular:size=10
+URxvt*faceName:			      			        xft:Iosevka:style=regular:size=10,xft:FontAwesome for Powerline
+URxvt*font:            	              				xft:Iosevka:style=regular:size=10,xft:Inconsolata\ for\ Powerline:pixelsize=10
 URxvt*boldFont:                      	  			xft:Iosevka:style=bold:size=10
 
 ! URxvt*faceName:			      		        xft:Iosevka Sans Mono:style=regular
@@ -39,21 +39,21 @@ URxvt*boldFont:                      	  			xft:Iosevka:style=bold:size=10
 !! TERMINAL VISUAL SETTINGS ++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 !! Cursor and Pointer --------------------------------------------------------------
-URxvt*cursorColor:                    	green
+! URxvt*cursorColor:                    	blue
 ! URxvt*cursorColor2:                   color
 ! URxvt*pointerColor:                   color
 ! URxvt*pointerColor2:                  color
 ! URxvt*cursorUnderline:                boolean
-! URxvt*cursorBlink:                    boolean
+URxvt*cursorBlink:            		true
 ! URxvt*pointerBlank:                   boolean
 
 !! Colors ---------------------------------------------------------------------------
-URxvt*background:                     	Black
-URxvt*foreground:                     	White
+! URxvt*background:                     	Black
+! URxvt*foreground:                     	White
 URxvt*highlightTextColor:             	Black
 URxvt*colorUL:                        	yellow
 URxvt*underlineColor:                 	yellow
-! URxvt*color0:                         color
+! *color0:                         	#121212
 ! URxvt*color1:                         color
 ! URxvt*color2:                         color
 ! URxvt*color3:                         color
@@ -78,7 +78,7 @@ URxvt*underlineColor:                 	yellow
 
 !! Transparency Settings -----------------------------------------------------------
 URxvt*transparent:                    	true
-URxvt*shading:                        	15
+URxvt*shading:                        	30
 ! URxvt*tintColor:                      color
 ! URxvt*blurRadius:                     HxV
 ! URxvt*fading:                         number
@@ -91,10 +91,10 @@ URxvt*scrollBar_right:                	false
 URxvt*scrollBar_floating:             	false
 ! URxvt*scrollBar_align:                mode
 ! URxvt*jumpScroll:                     boolean
-! URxvt*skipScroll:                     boolean
+URxvt*skipScroll:                     	true
 ! URxvt*scrollTtyOutput:                boolean
 ! URxvt*scrollTtyKeypress:              boolean
-! URxvt*scrollWithBuffer:               boolean
+URxvt*scrollWithBuffer:               	false
 ! URxvt*scrollColor:                    color
 ! URxvt*mouseWheelScrollPage:           boolean
 
@@ -102,7 +102,7 @@ URxvt*scrollBar_floating:             	false
 ! URxvt*background.border:              boolean
 ! URxvt*externalBorder:                 1
 ! URxvt*internalBorder:                 1
-URxvt*borderLess:                     false
+URxvt*borderLess:                     	false
 ! URxvt*lineSpace:                      number
 ! URxvt*letterSpace:                    -2
 
@@ -111,13 +111,13 @@ URxvt*borderLess:                     false
 
 !! Extensions ------------------------------------------------------------------------
 
-URxvt*perl-lib:                       	/lib/urxvt/
-URxvt*perl-ext-common:                	default,url-select,matcher
+! URxvt*perl-lib:                       	
+URxvt*perl-ext-common:                	
 URxvt*url-launcher:                   	/bin/firefox
 
 URxvt*loginShell:                     	true
-URxvt*termName:                       	rxvt-256color
-URxvt*saveLines:                      	8000
+URxvt*termName:                       	URxvt
+URxvt*saveLines:                      	0
 URxvt*iso14755:                       	false
 URxvt*iso14755_52:                    	false
 URxvt*depth:                          	32
@@ -131,7 +131,7 @@ URxvt*depth:                          	32
 ! URxvt*inheritPixmap:                  boolean
 ! URxvt*utmpInhibit:                    boolean
 ! URxvt*urgentOnBell:                   boolean
-! URxvt*visualBell:                     boolean
+URxvt*visualBell:                     	true
 ! URxvt*mapAlert:                       boolean
 ! URxvt*meta8:                          boolean
 ! URxvt*tripleclickwords:               boolean
@@ -158,7 +158,7 @@ URxvt*depth:                          	32
 ! URxvt*secondaryScreen:                boolean
 ! URxvt*secondaryScroll:                boolean
 ! URxvt*perl-eval:                      perl-eval
-! URxvt*perl-ext:                       string
+URxvt*perl-ext:                       
 ! URxvt*xrm:                            string
 ! URxvt*keysym.sym:                     keysym
 ! URxvt*background.expr:                string
@@ -181,3 +181,39 @@ URxvt*depth:                          	32
 ! URxvt*tab-fg:                         colour
 ! URxvt*tabbar-bg:                      colour
 ! URxvt*tabbar-fg:                      colour
+! special
+*.foreground:   #daba8b
+*.background:   #191716
+*.cursorColor:  #daba8b
+
+! black
+*.color0:       #0f0e0d
+*.color8:       #383332
+
+! red
+*.color1:       #845336
+*.color9:       #8c4f4a
+
+! green
+*.color2:       #57553c
+*.color10:      #898471
+
+! yellow
+*.color3:       #a17e3e
+*.color11:      #c8b491
+
+! blue
+*.color4:       #43454f
+*.color12:      #65788f
+
+! magenta
+*.color5:       #604848
+*.color13:      #755e4a
+
+! cyan
+*.color6:       #5c6652
+*.color14:      #718062
+
+! white
+*.color7:       #a18b62
+*.color15:      #bc9d66

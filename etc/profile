@@ -1,0 +1,86 @@
+#=====================#
+#                     #
+# ENVIROMENT VARIABLE #
+# /etc/profile 	      #
+#		      #
+# by Cawa             #
+#                     #
+#=====================#
+
+
+
+# Set our umask
+
+umask 022
+
+
+#==========================================#
+#                                          #
+# Set and Append the default               #
+# $PATH Variable                           #
+#                                          #
+#                                          # 
+
+# this function will check for duplicates
+
+appendpath () {
+    case ":$PATH:" in
+        *:"$1":*)
+            ;;
+        *)
+            PATH="${PATH:+$PATH:}$1"
+    esac
+}
+
+#                                          #
+# Add your custom locations here to be set #
+# in your $PATH                            #
+#                                          #
+
+#appendpath '*'
+appendpath "$(ruby -e 'print Gem.user_dir')/bin"
+appendpath '/usr/local/sbin'
+appendpath '/usr/local/bin'
+appendpath '/usr/bin'
+
+unset appendpath
+
+export PATH
+export GEM_HOME=$HOME/.gem
+
+#===================================#
+#                                   #
+# Custom Profiles for Apps etc      #
+# Load profiles from /etc/profile.d #
+#                                   #
+#===================================#
+
+if test -d /etc/profile.d/; then
+	for profile in /etc/profile.d/*.sh; do
+		test -r "$profile" && . "$profile"
+	done
+	unset profile
+fi
+
+#===========================#
+#                           #
+# Source global bash config #
+# /etc/bash.bashrc          #
+#                           #
+#===========================#
+
+if test "$PS1" && test "$BASH" && test -z ${POSIXLY_CORRECT+x} && test -r /etc/bash.bashrc; then
+	. /etc/bash.bashrc
+fi
+
+#=============#
+#             #
+# Other Stuff #
+#             #
+#=============#
+
+# Termcap is outdated, old, and crusty, kill it.
+unset TERMCAP
+
+# Man is much better than us at figuring this out
+unset MANPATH
