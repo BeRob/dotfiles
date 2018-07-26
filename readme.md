@@ -6,34 +6,20 @@
 # System #
 
 /etc/bash.bashrc 
-
 /etc/mkinitcpio.conf 
-
-/etc/locale.conf 
-
-/etc/profile 
-
-/etc/*
-/etc/*
-/etc/*
+/etc/tmux.conf
+/etc/profile
 
 
 # User #
-~/... = $HOME/...
+
+# ~/... = $HOME/...
 
 ~/.Xresources 	
-
 ~/.bash_profile 
-
 ~/.bashrc
-
 ~/.tmux.conf
 
-~/*
-
-~/*
-
-~/*
 
 
 # i3 #
