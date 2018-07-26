@@ -1,89 +1,77 @@
-## i3 config file (v4)
-#
+###
+# I3 WM config file (v4)
 # $HOME/.config/i3/config
 #       by Cawa
-#
+###
 
 ## Set default mod button
-
 set $mod Mod4
 
-
 ## Fonts for window titles and i3bar (unless other in {} below)
-
-font pango:monospace 8
+font pango:monospace 8px
 #font pango:DejaVu Sans Mono 8
 #font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 
-
-## Use Mouse+$mod to drag floating windows to their wanted position
-floating_modifier $mod
-
-# start a terminal
-bindsym $mod+Return exec /bin/urxvt
-
+## WINDOW HANDLING ------------------------------------
 # kill focused window
 bindsym $mod+q kill
 bindsym Mod1+F4 kill
-
-# start dmenu (a program launcher)
-bindsym $mod+d exec --no-startup-id dmenu_path_c | dmenu_run
-
-# There also is the (new) i3-dmenu-desktop which only displays applications
-# shipping a .desktop file. It is a wrapper around dmenu, so you need that
-# installed.
-# bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
-
-# change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+semicolon focus right
-
-# alternatively, you can use the cursor keys:
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
-
 # move focused window
 bindsym $mod+Shift+j move left
 bindsym $mod+Shift+k move down
 bindsym $mod+Shift+l move up
 bindsym $mod+Shift+semicolon move right
+	# alternatively, you can use the cursor keys:
+	bindsym $mod+Shift+Left move left
+	bindsym $mod+Shift+Down move down
+	bindsym $mod+Shift+Up move up
+	bindsym $mod+Shift+Right move right
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
 
-# alternatively, you can use the cursor keys:
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
-
-# split in horizontal orientation
-bindsym $mod+h split h
-
-# split in vertical orientation
-bindsym $mod+v split v
-
+## FULLSCREEN -------------------------------------------
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
 
+## SPLIT-------------------------------------------------
+#in horizontal orientation
+bindsym $mod+h split h
+# in vertical orientation
+bindsym $mod+v split v
+
+## LAYOUT------------------------------------------------
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
-
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
 
+## FOCUS ------------------------------------------------
+# change focus
+bindsym $mod+j focus left
+bindsym $mod+k focus down
+bindsym $mod+l focus up
+bindsym $mod+semicolon focus right
+	# alternatively, you can use the cursor keys:
+	bindsym $mod+Left focus left
+	bindsym $mod+Down focus down
+	bindsym $mod+Up focus up
+	bindsym $mod+Right focus right
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
-
 # focus the parent container
 bindsym $mod+a focus parent
-
 # focus the child container
 #bindsym $mod+d focus child
 
+## PROGRAMM SHORTCUTS ------------------------------------
+# start a terminal
+bindsym $mod+Return exec /bin/urxvt
+# start dmenu (a program launcher)
+bindsym $mod+d exec --no-startup-id dmenu_path_c | dmenu_run
+
+## WOKSPACES ---------------------------------------------
 # switch to workspace
 bindsym $mod+1 workspace 1
 bindsym $mod+2 workspace 2
@@ -124,7 +112,6 @@ bindsym $mod+Shift+e exec --no-startup-id \
 
 
 ## System state control
-    
 # Create Log out, Reboot, Poweroff bindings
 
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
@@ -142,7 +129,7 @@ set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) re
         bindsym Escape mode "default"
     }
 
-bindsym XF86PowerOff mode "$mode_system"
+#bindsym XF86PowerOff mode "$mode_system"
 #bindsym XF86PowerOff exec urxvt
 
 
@@ -176,13 +163,13 @@ bindsym $mod+r mode "resize"
 
 ## I3 BAR config
 
- bar {
+# bar {
     #       output DP1
     #       status_command ~/.i3/conky/conky-dp1
-            tray_output none
-            strip_workspace_numbers yes
-            position top
-            mode dock
+            #tray_output none
+            #strip_workspace_numbers yes
+            #position top
+            #mode dock
     #       font pango:fixed 6
     #       font pango:Terminus 13px
     #       font -*-profont-*-*-*-*-4-*-*-*-*-*-*-*, Icons 10px
@@ -190,29 +177,29 @@ bindsym $mod+r mode "resize"
     #       font pango:Consolas Bold 19px
     #       font pango:Icons 10px
 
-    colors {
-                    background #161616
-                    statusline #2D2D2D
+    #colors {
+                   # background #161616
+                    #statusline #2D2D2D
     # class                            border  backgrd text
-                    focused_workspace  #2D2D2D #2D2D2D #ffffff
-                    active_workspace   #2D2D2D #2D2D2D #cad0c4
-                    inactive_workspace #161616 #1E1E1E #605e56
-                    urgent_workspace   #2d2d2d #2d2d2d #cad0c4
-            }
-}
+                    #focused_workspace  #2D2D2D #2D2D2D #ffffff
+                   # active_workspace   #2D2D2D #2D2D2D #cad0c4
+                    #inactive_workspace #161616 #1E1E1E #605e56
+                    #urgent_workspace   #2d2d2d #2d2d2d #cad0c4
+         #   }
+#}
 
 # Multimedia keys
 # Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+#bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
+#bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
+#bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
 
 # Sleep key
-bindsym XF86Sleep exec --no-startup-id systemctl suspend
+#bindsym XF86Sleep exec --no-startup-id systemctl suspend
 
 # Screen brightness controls
-bindsym XF86MonBrightnessUp exec xbacklight -inc 10 # increase screen brightness
-bindsym XF86MonBrightnessDown exec xbacklight -dec 10 # decrease screen brightness
+#bindsym XF86MonBrightnessUp exec xbacklight -inc 10 # increase screen brightness
+#bindsym XF86MonBrightnessDown exec xbacklight -dec 10 # decrease screen brightness
 
 # Media player controls
 # bindsym XF86AudioPlay exec playerctl play
@@ -221,16 +208,11 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 10 # decrease screen brightne
 # bindsym XF86AudioPrev exec playerctl previous
 
 # Mouse
-bindsym button2 kill
+#bindsym button2 kill
 
 # Startup apps
-exec --no-startup-id nm-applet
-exec --no-startup-id dunst
-exec --no-startup-id fcitx
-exec --no-startup-id parcellite
-exec --no-startup-id volumeicon
-exec --no-startup-id "feh --bg-scale $HOME/.config/i3/wallpaper.jpg"
-exec --no-startup-id compton -cbm 0.75
+exec --no-startup-id "feh --bg-scale $HOME/pics/wallpapers/archlinux-wallpaper-001.png"
+
 
 # Window config
-for_window [class="mpv"] floating enable
+#for_window [class="mpv"] floating enable
