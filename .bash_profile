@@ -7,9 +7,9 @@
 #===============================================#
 
 # export TERM=rxvt
-#export TERM=rxvt-unicode
-#export EDITOR=vim
-#export VISUAL=atom
+# export TERM=rxvt-unicode
+# export EDITOR=vim
+# export VISUAL=atom
 
 #================#
 # Source .bashrc #
@@ -18,4 +18,3 @@
 if [ -n "$BASH" ]; then
 	[ -r "$HOME/.bashrc" ] && . ~/.bashrc
 fi
-

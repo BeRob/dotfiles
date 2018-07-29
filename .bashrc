@@ -10,27 +10,13 @@
 
 [[ $- != *i* ]] && return
 
-#if [[ -z "$TMUX" ]] ; then
-#	ID="$( tmux ls | grep -vm1 attached | cut -d: -f1 )"
-#	if [[ -z "$ID" ]] ; then
-#		tmux new-session
-#	else
-#		tmux attach-session -t "$ID"
-#	fi
-#fi
+export TTY=$(tty)
+export GPG_TTY=$TTY
 
-# Source /ETC/BASH.BASHRC
-
-if [ -f /etc/bash.bashrc ]; then
-	. /etc/bash.bashrc
-fi
-
-# Powerline Bash Prompt options
-
-powerline-daemon -q
-POWERLINE_BASH_CONTINUATION=1
-POWERLINE_BASH_SELECT=1
-. "/usr/lib/python3.6/site-packages/powerline/bindings/bash/powerline.sh"
+	# for config in .b-aliases .b-hist .b-options .bashrc "$HOSTNAME"; do
+	# 	[[ -r $HOME/$config ]] && . "$HOME/$config"
+	# done
+	# unset config
 
 ## Bash Prompt Colors
 
@@ -50,8 +36,18 @@ dim_orange=$(tput setaf 166)
 
 ## Custom Prompt with (tput)
 
-TITLEBAR='\[\e]0;\u@\h: \w\a\]'
-PS1=$TITLEBAR'[\[$green\][\u@\h]\[$reset\]][\W]\$ '
+TITLEBAR="\[\e]0;\u@\h: \w\a\]"
+PS1=$TITLEBAR"[\[$green\][\u@\h]\[$reset\]][\W]\$ "
 
-# PS1="\[\e]2;\W\a\]\[\[\033[0;32m\]\u\[\033[0m\]@\h]\$"
-# PS1="[\[\033[0;32m\]\u\[\033[0m\]@\h] \W \$ "
+## Powerline Bash Prompt options
+
+powerline-daemon -q
+POWERLINE_BASH_CONTINUATION=1
+POWERLINE_BASH_SELECT=1
+source "/usr/lib/python3.6/site-packages/powerline/bindings/bash/powerline.sh"
+
+## Source /ETC/BASH.BASHRC
+
+if [ -f /etc/bash.bashrc ]; then
+	. /etc/bash.bashrc
+fi

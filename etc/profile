@@ -7,18 +7,14 @@
 #                     #
 #=====================#
 
-
-
 # Set our umask
 
 umask 022
-
 
 #==========================================#
 #                                          #
 # Set and Append the default               #
 # $PATH Variable                           #
-#                                          #
 #                                          # 
 
 # this function will check for duplicates
@@ -32,12 +28,13 @@ appendpath () {
     esac
 }
 
-#                                          #
 # Add your custom locations here to be set #
 # in your $PATH                            #
-#                                          #
 
-#appendpath '*'
+#appendpath '/home/cawa/dotfiles/'
+appendpath '/home/cawa/dotfiles/'
+appendpath '/etc/'
+appendpath '/home/cawa/'
 appendpath "$(ruby -e 'print Gem.user_dir')/bin"
 appendpath '/usr/local/sbin'
 appendpath '/usr/local/bin'
@@ -60,6 +57,13 @@ if test -d /etc/profile.d/; then
 		test -r "$profile" && . "$profile"
 	done
 	unset profile
+fi
+
+if test -d /etc/bash-conf/; then
+	for config in /etc/bash-conf/*.conf; do
+		test -r "$config" && . "$config"
+	done
+	unset config
 fi
 
 #===========================#

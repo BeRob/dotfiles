@@ -13,7 +13,7 @@ set $mod Mod4
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 
-font pango:DejaVu Sans Mono, Terminus Bold Semi-Condensed, FontAwesome 9
+font pango:Iosevka 12
 
 
 #####
@@ -26,17 +26,20 @@ set_from_resource $black i3wm.color0 "#000000"
 
 ## New Window defaults
 
-# new_window pixel 1
-new_float pixel 1
+new_window pixel 2
+new_float pixel 2
+
 workspace_auto_back_and_forth yes
+
 for_window [window_role="pop-up"] floating enable,move absolute center
+
 popup_during_fullscreen smart
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec rxvt-unicode-256color
+bindsym $mod+Return exec urxvt
 
 # kill focused window
 bindsym $mod+q kill
@@ -118,10 +121,10 @@ assign [class="Firefox"] 3:firefox
 assign [class="Atom"] 4:atom
 assign [class="Ranger"] 2:ranger
 #assign [class="tmux-256color"] $ws1
-assign [class="URxvt"] 0:shell
+assign [class="urxvt"] 0:shell
 assign [class="s-tui"] 1:sysinfo
-assign [class="Neofetch"] 1:sysinfo
-assign [class="Top"] 1:sysinfo
+assign [class="neofetch"] 1:sysinfo
+assign [class="top"] 1:sysinfo
 
 
 # switch to workspace
@@ -187,7 +190,7 @@ bindsym $mod+r mode "resize"
 bar {
         status_command python3 /usr/lib/python3.6/site-packages/powerline/bindings/i3/powerline-i3.py
 	position top
-	font -xos4-terminesspowerline-medium-r-normal--12-120-72-72-c-60-iso10646-1
+	font -xos4-terminesspowerline-medium-r-normal--12-120-72-72-c-60-iso10646-1,FontAwesome
 }
 
 # AUTOSTART
